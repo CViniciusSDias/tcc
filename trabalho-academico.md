@@ -34,3 +34,23 @@ Com uma proposta diferente, foi desenvolvido o aplicativo _Esqueci a senha!_, te
 O principal diferencial é que _Esqueci a senha!_ armazena suas senhas somente em um banco de dados no próprio celular, não transmitindo nada pela internet. Com isso, você ganha em segurança, perdendo em praticidade. As senhas só existirão em um dispositivo, e serão perdidas em caso de troca de aparelho, por exemplo.
 
 Além disso, o aplicativo tem seu acesso protegido por uma "pergunta secreta" que o usuário deve definir em seu primeiro acesso ao mesmo. Desta forma, caso alguém ache o celular, não conseguirá acessar suas senhas, mas não será necessária **mais uma senha** para acessar o aplicativo.
+
+# Escopo do projeto
+
+## Descrição da aplicação
+
+Para que a utilização seja simples e direta, o aplicativo armazena apenas 2 campos para cada senha:
+- Onde usar;
+- Senha.
+
+Desta forma, não há necessidade de exibir vários campos que muitas vezes não seriam utilizados, sem perder a flexibilidade, sendo o campo "Onde usar" textual, em que o usuário pode escrever inclusive seu login, caso seja necessário.
+
+Já a "pergunta secreta" citada no capítulo anterior, funciona da seguinte maneira:
+
+Um aplicativo que armazena senhas, deve ter algum tipo de proteção, para o caso do aparelho ir parar em mãos de terceiros.
+Além disso, um usuário que faz uso deste tipo de aplicativo tende a esquecer suas senhas, logo, não seria interessante para o mesmo que o programa fosse protegido com uma outra senha, já que seria comum o esquecimento desta também.
+Para isso, foi implementado o mecanismo em que o usuário no primeiro acesso à aplicação, define uma pergunta da qual apenas ele deveria saber a resposta, e a resposta desta. Assim, a cada acesso subsequente, a pergunta seria exibida, sendo necessário digitar a resposta.
+
+## Aplicação híbrida
+
+Pensando na portabilidade entre plataformas, ou seja, na possibilidade de executar o aplicativo tanto em sistemas Android quanto iOS, o aplicativo foi desenvolvido de forma híbrida, combinando características do desenvolvimento Web e Nativo.
