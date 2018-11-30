@@ -2,7 +2,7 @@
 
 Como citado no resumo, precisamos de muitas senhas para diversos serviços, que podem (e devem) ser alteradas com certa frequência.
 
-Lembrar-se de todas é um grande desafio, e segundo aponta uma pesquisa do portal _BuzzFeed_, pelo menos um terço de usuários da internet esquece uma de suas senhas pelo menos uma vez por semana \cite{pesquisa_esquecer_senhas}.
+Lembrar-se de todas é um grande desafio, e segundo aponta uma pesquisa realizada pela empresa _Intel Security_, pelo menos um terço de usuários da internet esquece uma de suas senhas pelo menos uma vez por semana \cite{pesquisa_esquecer_senhas}.
 
 Segundo os dados desta pesquisa, a maioria dos usuários não utiliza nenhum programa especial para armazenar suas senhas, o que colabora para este alto índice de esquecimento.
 
