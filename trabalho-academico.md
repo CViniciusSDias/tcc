@@ -54,3 +54,37 @@ Para isso, foi implementado o mecanismo em que o usuário no primeiro acesso à 
 ## Aplicação híbrida
 
 Pensando na portabilidade entre plataformas, ou seja, na possibilidade de executar o aplicativo tanto em sistemas Android quanto iOS, o aplicativo foi desenvolvido de forma híbrida, combinando características do desenvolvimento Web e Nativo.
+
+Este modelo ainda é bastante utilizado e foi um grande impulsionador do que hoje conhecemos como PWA.
+
+Ele funciona da seguinte forma: Toda a aplicação é desenvolvida utilizando as tecnologias Web, ou seja, HTML, CSS e JS. Desta forma, toda a interface e principais funcionalidades do aplicativo são criadas. Faz-se uso de alguma ferramenta que envolva esta aplicação Web, de forma que gere um arquivo instalável em dispositivos móveis, o qual poderá ser enviado para as lojas (Play Store da Google e App Store da Apple).
+
+Este tipo de ferramenta cria um aplicativo nativo, contendo um componente chamado de _WebView_, que tem como propósito exibir páginas da Web. Este componente é carregado com nossa aplicação Web sendo executada em tela cheia, o que dá a sensação de ser nativo. Além disso, algumas ferramentas ainda fornecem _plugins_ para algumas funcionalidades nativas, como acesso a contatos, arquivos, etc.
+
+# Tecnologias utilizadas
+
+## Cordova
+
+A ferramenta utilizada para este propósito caso foi o _Apache Cordova_, que é a mais conhecida e difundida no meio.
+
+Desenvolvido por uma empresa chamada _Nitobi_ e comparada pela _Adobe Systems_ em 2011, o projeto se chamava _PhoneGap_. Logo após a compra, uma versão de código aberto do software foi lançada, recebendo o nome _Apache Cordova_ devido à sua licença (Apache License \cite{apache_license}).
+
+Os plugins utilizados foram os seguintes:
+
+- cordova-plugin-device: Plugin que fornece acesso a um objeto global `device`, que permite acesso a informações do dispositivo, como modelo, plataforma, versão, etc;
+- cordova-plugin-firebase-analytics: Plugin que permite o envio de informações para o _Firebase Analytics_, que monitora o acesso a cada tela;
+- cordova-plugin-splashscreen: Plugin que permite a exibição de uma _SplashScreen_ (tela com a logo do projeto) antes da execução do aplicativo;
+- cordova-plugin-whitelist: Plugin que, dentre outras coisas, libera acesso do aplicativo à internet;
+- ionic-plugin-keyboard: Plugin que faz com que a aplicação web se comporte como nativa, não se alterando com a abertura do teclado em campos de digitação.
+
+## Ionic
+
+O _Apache Cordova_ não fornece nenhum tipo de interface personalizada para que desenvolvamos nossa aplicação de forma semelhante às aplicações nativas. Todo este trabalho deve ser feito através de códigos CSS. 
+
+Para facilitar esta tarefa, existe um projeto chamado _Ionic Framework_, que fornece componentes prontos que se adaptam à plataforma utilizada, ou seja, o visual do aplicativo no Android e no iOS fica ligeiramente diferente, se parecendo com um aplicativo nativo de cada plataforma, mesmo tendo sido escrito apenas uma base de código.
+
+## Web SQL Database
+
+Devido à simplicidade dos dados armazenados, não foi necessária uma grande análise sobre a melhor forma de armazená-los, logo, um simples banco de dados relacional foi utilizado devido à maior familiaridade com este tipo de tecnologia.
+
+O banco de dados relacional utilizado na Web é chamado de _Web SQL Database_, e fornece funcionalidades simples como criação e manipulação de tabelas, o que foi suficiente para o projeto.
