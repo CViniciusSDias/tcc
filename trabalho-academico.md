@@ -10,8 +10,7 @@ Ainda segundo esta pesquisa, muitas vezes os usuários utilizam a mesma senha pa
 
 Uma simples solução para mitigar este problema do esquecimento, possibilitando que os usuários utilizassem diversas senhas, seria o uso de programas que organizem suas senhas, permitindo uma eventual consulta.
 
-
-# Soluções 
+# Soluções Disponíveis
 
 ## Aplicativos existentes
 
@@ -40,6 +39,7 @@ Além disso, o aplicativo tem seu acesso protegido por uma "pergunta secreta" qu
 ## Descrição da aplicação
 
 Para que a utilização seja simples e direta, o aplicativo armazena apenas 2 campos para cada senha:
+
 - Onde usar;
 - Senha.
 
@@ -63,9 +63,9 @@ Este tipo de ferramenta cria um aplicativo nativo, contendo um componente chamad
 
 # Tecnologias utilizadas
 
-## Cordova
+## Cordova \cite{cordova}
 
-A ferramenta utilizada para este propósito caso foi o _Apache Cordova_, que é a mais conhecida e difundida no meio.
+A ferramenta utilizada para desenvolver a solução de forma híbrida foi o _Apache Cordova_, que é a mais conhecida e difundida no meio.
 
 Desenvolvido por uma empresa chamada _Nitobi_ e comparada pela _Adobe Systems_ em 2011, o projeto se chamava _PhoneGap_. Logo após a compra, uma versão de código aberto do software foi lançada, recebendo o nome _Apache Cordova_ devido à sua licença (Apache License \cite{apache_license}).
 
@@ -77,14 +77,59 @@ Os plugins utilizados foram os seguintes:
 - cordova-plugin-whitelist: Plugin que, dentre outras coisas, libera acesso do aplicativo à internet;
 - ionic-plugin-keyboard: Plugin que faz com que a aplicação web se comporte como nativa, não se alterando com a abertura do teclado em campos de digitação.
 
-## Ionic
+## Ionic \cite{ionic}
 
-O _Apache Cordova_ não fornece nenhum tipo de interface personalizada para que desenvolvamos nossa aplicação de forma semelhante às aplicações nativas. Todo este trabalho deve ser feito através de códigos CSS. 
+O _Apache Cordova_ não fornece nenhum tipo de interface personalizada para que desenvolvamos nossa aplicação de forma semelhante às aplicações nativas. Todo este trabalho deveria ser feito através de códigos CSS.
 
 Para facilitar esta tarefa, existe um projeto chamado _Ionic Framework_, que fornece componentes prontos que se adaptam à plataforma utilizada, ou seja, o visual do aplicativo no Android e no iOS fica ligeiramente diferente, se parecendo com um aplicativo nativo de cada plataforma, mesmo tendo sido escrito apenas uma base de código.
+
+Este projeto faz uso de um framework JavaScript chamado _Angular_.
+
+## Angular \cite{angular}
+
+O framework Angular foi criado pela Google, e tem como principal característica a possibilidade de criação de componentes, que podem ser estilizados de forma independente, e utilizados dentro de outros componentes.
+
+Utilizando Angular, o Ionic consegue criar componentes estilizados, e fazendo uso do plugin `cordova-plugin-device`, consegue formatar os mesmos de acordo com a plataforma utilizada, ou seja, oferecer aparências diferentes para Android e iOS, por exemplo.
 
 ## Web SQL Database
 
 Devido à simplicidade dos dados armazenados, não foi necessária uma grande análise sobre a melhor forma de armazená-los, logo, um simples banco de dados relacional foi utilizado devido à maior familiaridade com este tipo de tecnologia.
 
 O banco de dados relacional utilizado na Web é chamado de _Web SQL Database_, e fornece funcionalidades simples como criação e manipulação de tabelas, o que foi suficiente para o projeto.
+
+# Apresentação do _Esqueci a Senha!_
+
+## Arquitetura do projeto
+
+### Padrão arquitetural
+
+O projeto foi organizado estruturalmente, de forma com que uma classe é responsável por exibir a tela, enquanto outra é responsável por realizar ações e fornecer serviços, sendo outra responsável por representar os dados da aplicação. Para seguir esta linha, foi utilizado um padrão arquitetural chamado de MVC. A classe que identifica qual tela será exibida, é chamada de _Controller_. O arquivo (neste caso, em html) que define a parte visual da tela, é chamado de _View_, enquanto a classe que representa um dado, como uma senha, por exemplo, é chamado de _Model_.
+
+O padrão MVC é amplamente adotado em aplicações Web atualmente, o que torna fácil o entendimento do projeto por demais desenvolvedores familiarizados com tal ambiente.
+
+### Diretórios de arquivos
+
+- app/
+    - Pasta que contém o componente inicial da aplicação, que decide se a tela de login ou tela de cadastro da pergunta secreta será exibida
+- assets/
+    - Pasta de imagens, onde estão contidos os ícones da aplicação
+- components/
+    - Pasta que contém componentes compartilhados entre telas, como o cabeçalho, botões, etc.
+- daos/
+    - Pasta que contém os arquivos que fazem aceso aos dados, no caso, ao Web SQL Database
+- models/
+    - Pasta que contém a definição das classes de negócio
+- pages/
+    - Pasta que contém a definição das telas do aplicativo
+- providers/
+    - Pasta que contém definição de classes utilizadas nas páginas, que fornecem algum tipo de serviço, como criar conexão com o banco, criar alertas para a tela, etc.
+- theme/
+    - Pasta que contém o arquivo com o esquema de cores do aplicativo
+- declarations.d.ts
+    - Arquivo que contém a definição de tipos desconhecidos pelo TypeScript
+- index.html
+    - Arquivo principal do aplicativo, que exibe o componente inicial
+- manifest.json
+    - Arquivo contendo dados da aplicação para que possa ser utilizado como PWA
+- service-worker.js
+    - Arquivo que realiaria tarefas em segundo plano, caso necessário
