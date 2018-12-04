@@ -133,3 +133,43 @@ O padrão MVC é amplamente adotado em aplicações Web atualmente, o que torna 
     - Arquivo contendo dados da aplicação para que possa ser utilizado como PWA
 - service-worker.js
     - Arquivo que realiaria tarefas em segundo plano, caso necessário
+
+## Diagramas
+
+### Diagrama de classes
+
+As principais classes de negócio, e classes fornecedoras de serviços que usam, ou são usadas nas classes de negócios estão descritas no diagrama de classes.
+
+![Diagrama de Classes](imagens/diagrama-classes.png){#diagrama-classes largura=100%}
+
+Fonte: Autor.
+
+Ver \autoref{diagrama-classes}
+
+### Diagrama de caso de uso
+
+As funções mais comuns do aplicativo são descritas no diagrama de casos de uso.
+
+![Diagrama de Casos de Uso](imagens/casos-uso.png){#casos-uso largura=100%}
+
+Fonte: Autor.
+
+Ver \autoref{casos-uso}
+
+## Exemplos de código
+
+Para exemplificar como é o código de uma tela, pode ser conferido o exemplo do componente TS, ou seja, o _Controller_. Nele, temos alguns métodos do ciclo de vida do componente, como `ionViewWillEnter`, executado antes da tela ser carregada, e `ionViewDidEnter`, executado após entrar na tela. Nestes métodos podem ser executadas algumas ações, como buscar os dados a serem exibidos, realizar logs, enviar dados estatísticos, etc.
+
+![Componente (TS) da tela de senhas](imagens/pagina-home-ts.png){#pagina-home-ts largura=100%}
+
+Fonte: Autor.
+
+Ver \autoref{pagina-home-ts}
+
+Já para mostrar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos os métodos públicos do _Controller_, e assim, recuperar dados para exibí-los.
+
+![Template (HTML) da tela de senhas](imagens/pagina-home-html.png){#pagina-home-html largura=100%}
+
+Fonte: Autor
+
+Ver \autoref{pagina-home-html}
