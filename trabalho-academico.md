@@ -158,18 +158,142 @@ Ver \autoref{casos-uso}
 
 ## Exemplos de código
 
+### Tela de exibição de senhas
+
 Para exemplificar como é o código de uma tela, pode ser conferido o exemplo do componente TS, ou seja, o _Controller_. Nele, temos alguns métodos do ciclo de vida do componente, como `ionViewWillEnter`, executado antes da tela ser carregada, e `ionViewDidEnter`, executado após entrar na tela. Nestes métodos podem ser executadas algumas ações, como buscar os dados a serem exibidos, realizar logs, enviar dados estatísticos, etc.
 
-![Componente (TS) da tela de senhas](imagens/pagina-home-ts.png){#pagina-home-ts largura=100%}
+```
+// ...
 
-Fonte: Autor.
+@Component({
+    selector: 'page-home',
+    templateUrl: 'home.html'
+})
+export class HomePage {
+    public senhas: Senha[] = [];
+    public inicializado: boolean = false;
 
-Ver \autoref{pagina-home-ts}
+    constructor(public navCtrl: NavController, public senhaDao: SenhaDao,
+        private toast: ToastFactory, private actionSheetCtrl: ActionSheetController,
+        private alertFactory: AlertFactory, private loadingCtrl: LoadingController,
+        private firebase: FirebaseService
+    ) { }
+
+    public ionViewWillEnter(): void {
+        this.buscarSenhas();
+    }
+
+    public ionViewDidEnter() {
+        this.firebase.logPageView('home');
+    }
+
+    private buscarSenhas(): void {
+        let loading = this.loadingCtrl.create({
+            content: 'Carregando'
+        });
+
+        loading.present().then(() => {
+            this.senhaDao.buscarTodas()
+                .then(senhas => {
+                    this.senhas = senhas;
+                    loading.dismiss();
+                    this.inicializado = true;
+                });
+        });
+    }
+
+    public remover(senha: Senha): void {
+        this.alertFactory.getConfirm(
+            'Apagar',
+            `Tem certeza que deseja apagar a senha de ${senha.ondeUsar}?`
+        ).then(() => {
+            this.senhas.splice(this.senhas.indexOf(senha), 1);
+            this.senhaDao.remover(senha);
+            this.toast.showToastWithButton('Senha removida com sucesso', 'Ok');
+        }).catch(() => {/*Usuário clicou em 'não'*/});
+    }
+
+    public actionSheet(senha: Senha): void {
+        this.actionSheetCtrl.create({
+            title: senha.ondeUsar,
+            buttons: [
+                {
+                    text: 'Excluir',
+                    role: 'destructive',
+                    icon: 'trash',
+                    handler: () => { this.remover(senha); }
+                },
+                {
+                    text: 'Editar',
+                    icon: 'create',
+                    handler: () => { this.navCtrl.push(EditarPage, {senha: senha}); }
+                },
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    icon: 'close'
+                }
+            ]
+        }).present();
+    }
+}
+```
 
 Já para mostrar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos os métodos públicos do _Controller_, e assim, recuperar dados para exibí-los.
 
-![Template (HTML) da tela de senhas](imagens/pagina-home-html.png){#pagina-home-html largura=100%}
+```
+<ion-header>
+    <page-header>
+        Home
+    </page-header>
+</ion-header>
 
-Fonte: Autor
+<ion-content padding>
+    <ion-list *ngIf="senhas.length">
+        <ion-item *ngFor="let senha of senhas" (click)="actionSheet(senha)">
+            <ion-item class="senha">
+                <ion-icon name="lock" item-start></ion-icon>
+                <h2>{{senha.ondeUsar}}</h2>
+                <p>{{senha.senha}}</p>
+            </ion-item>
+        </ion-item>
+    </ion-list>
 
-Ver \autoref{pagina-home-html}
+    <ion-grid *ngIf="!senhas.length && inicializado">
+        <ion-row align-items-center>
+            <ion-col>
+                <p><b>Você ainda não tem nenhuma senha cadastrada</b></p>
+                <p>Navegue até a aba "Adicionar" abaixo para criar uma</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+```
+
+### Criação do banco de dados
+
+A classe que gera a conexão com o banco de dados também verifica se a tabela já existe, criando-a caso contrário. Desta forma, na primeira conexão com o banco, a tabela será criada.
+
+```js
+export class ConnectionFactory {
+
+    public getConnection() {
+        let db = openDatabase('senhas', '1.0', 'senhas', 2 * 1024 * 1024);
+
+        this.createSchema(db);
+        return db;
+    }
+
+    private createSchema(db) {
+        let sql = `
+            CREATE TABLE IF NOT EXISTS senha (
+                id INTEGER PRIMARY KEY,
+                onde_usar TEXT NOT NULL,
+                senha TEXT NOT NULL
+            );
+        `;
+
+        db.transaction(tx => tx.executeSql(sql, []));
+    }
+}
+```
