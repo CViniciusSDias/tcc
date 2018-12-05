@@ -165,6 +165,16 @@ As principais classes de negócio, e classes fornecedoras de serviços que usam,
 
 Fonte: Autor.
 
+A classe _Senha_ representa uma senha armazenada pelo usário, e na tela inicial, é exibido uma lista de objetos deste tipo. Já a classe _Acesso_ representa os dados necessários para acessar o aplicativo, que são a pergunta secreta e sua resposta. No objeto desta classe é armazenado também o e-mail do usuário, para o caso dele esquecer a resposta, e precisar recuperá-la.
+
+Estas classes têm métodos para validar seus dados, e nestes métodos a classe _StringHelper_ é utilizada, podendo verificar se uma string está vazia, ou está no formato de e-mail.
+
+Para buscar os dados de acesso (pergunta secreta e sua resposta), o serviço _AcessoService_ é utilizado, buscando as informações da sessão. Este serviço também informa se é ou não o primeiro acesso do usuário ao aplicativo.
+
+A classe _Login_ é a classe responsável por utilizar _AcessoService_ para recuperar os dados da sessão e verificar se batem com os dados digitados pelo usuário.
+
+A classe _SenhaDao_ é a que acessa o banco de dados e realiza as operações de criar, recuperar, atualizar e remover senhas. Ela precisa de uma conexão com o banco de dados, que é criada pela classe _ConnectionFactory_.
+
 ### Diagrama de caso de uso
 
 As funções mais comuns do aplicativo são descritas no diagrama de casos de uso, encontrado na \autoref{casos-uso}.
@@ -172,6 +182,12 @@ As funções mais comuns do aplicativo são descritas no diagrama de casos de us
 ![Diagrama de Casos de Uso](imagens/casos-uso.png){#casos-uso largura=100%}
 
 Fonte: Autor.
+
+Os casos de uso referentes às senhas são autoexplicativos, sendo que o cadastro e edição de uma senha utilizam o mesmo formulário.
+
+Para fazer login, o usuário precisa digitar a resposta para sua pergunta secreta que estará sendo exibida.
+
+Em seu primeiro acesso, o usuário deve cadastrar a pergunta secreta, resposta e e-mail para recuperação da resposta. Nos acessos subsequentes, após logado, o usuário pode alterar estes dados na aba de configurações.
 
 ## Exemplos de código
 
