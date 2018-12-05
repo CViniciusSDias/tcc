@@ -179,7 +179,7 @@ A classe _SenhaDao_ é a que acessa o banco de dados e realiza as operações de
 
 As funções mais comuns do aplicativo são descritas no diagrama de casos de uso, encontrado na \autoref{casos-uso}.
 
-![Diagrama de Casos de Uso](imagens/casos-uso.png){#casos-uso largura=100%}
+![Diagrama de Casos de Uso](imagens/casos-uso.png){#casos-uso largura=75%}
 
 Fonte: Autor.
 
