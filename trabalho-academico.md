@@ -14,22 +14,20 @@ Uma simples solução para mitigar este problema do esquecimento, possibilitando
 
 ## Aplicativos existentes
 
-Felizmente já existem aplicações que oferecem esta funcionalidade de armazenar suas senhas. Sejam estas soluções online, ou até aplicativos móveis para _smartphones_.
+Após realizar uma busca por soluções existentes que pudessem auxiliar neste caso, organizando e armazenando suas senhas, foram encontradas diversas opções, tendo elas funcionalidades interessantes, e com versões gratuitas, sejam elas em versões online ou até aplicativos móveis para _smartphones_.
 
-Algumas aplicativos que realizam este trabalho são:
+Desta busca, foram selecionadas algumas soluções pertinentes ao contexto, sendo elas:
 
 - Dashlane \cite{dashlane}
-    - Tendo versão web e mobile, em sua versão gratuita armazena senhas e fornece uma "carteira digital" para realizar pagamentos online. Possrui versão paga que custa 39,99 dólares, onde o usuário consegue compartilhar senhas de forma ilimitada, sincronizar os dados entre dispositivos e realizar backup na nuvem.
+    - Tendo versão web e mobile, em sua versão gratuita armazena até 50 senhas. Possui versão paga que custa USD 39,96 por ano (USD 3,33 por mês), onde o usuário consegue organizar senhas de forma ilimitada, sincronizar os dados entre dispositivos, realizar backup na nuvem, etc. Tendo seu aplicativo uma interface bem simples e intuitiva, outras funcionalidades interessantes são o preenchimento automatico de formulários e dados de pagamento em algumas páginas, podendo automatizar logins e verificação da força de suas senhas armazenadas.
 - RoboForm \cite{roboform}
-    - Grátis em suas versões web e mobile, fornece além do armazenamento de senhas, login com um toque em suas contas e bloqueio de aplicações inutilizadas.
+    - Tendo 2 versões, uma individual (grátis) e uma para negócios (USD 39,95), esta aplicação está disponível para web, dispositivos desktop e smartphones. Além de armazenar suas senhas, esta aplicação oferece a opção de realizar login em determinados serviços com sua digital cadastrada no app. Sua interface é bastante semelhante dentre os dispositivos, ou seja, as versões mobile e para computadores se parecem bastante, o que traz sensação de familiaridade para quem o usa em mais de um lugar.
 - LastPass \cite{lastpass}
-    - Além de versões web e mobile, tem ainda extensões para navegadores. Na versão paga, custando 1 dólar por mês, oferece pastas familiares para que se gerencie até 5 usuários, suporte técnico e até 1 GB para armazenar arquivos criptografados.
+    - Além da versão mobile, ainda existem extensões para os principais navegadores (Chrome, Firefox, Safari, Opera e Edge). Na versão gratuita, o aplicativo fornece a opção de preencher os dados de login nos serviços cadastrados, além de organizar suas senhas. Na versão paga, custando USD 2,00 por mês, é possível compartilhar senhas, logins de Wi-Fi e outros itens com quantas pessoas quiser para facilitar o acesso. Ainda há a possibilidade de criar um plano de contingência digital com acesso de emergência. Oferece ainda suporte prioritário nesta versão paga, e 1GB de armazenamento criptografado de arquivos. No plano LastPass Families, por USD 4,00 por mês tem-se 6 licenças da versão paga.
 - 1Password \cite{1password}
-    - Fornece mais opções de planos, tendo versão gratuita, uma paga por 2,99 dólares, e outra, familiar, por 4,99 dólares. A diferença entre as versões é o número de usuários e quantidade de armazenamento disponível.
+    - Esta aplicação fornece mais opções de planos. Divididos nas categorias _Pessoal & Familiar_  e _Time e Negócios_, os planos vão de USD 2,99 até USD 7,99 por usuário por mês. As principais diferenças entre os planos são no limite de armazenamento, suporte VIP, e número de usuários. Tendo versões para Mac, iOS, Windows, Android, Linux e Chrome OS, também oferece a opção de preencher dados de login automaticamente.
 - Keeper \cite{keeper}
-    - Funciona como os demais aplicativos, oferecendo ainda autodestruição para apagar dados em caso de emergência. Tem versão gratuita, e 3 planos pagos: 29 dólares a versão ilimitada, 59 dólares o plano familiar e 30 dólares o plano comercial.
-
-Descrições retiradas da matéria "5 apps seguros para você guardar e gerenciar suas senhas" do Tecmundo \cite{senhas_tecmundo}.
+    - Tendo seu site com um visual aparentemente mais voltado para empresas, este aplicativo está disponível nas versões pessoal, de negócio e familiar. Não há informações de versão gratuita no site, mas existe o aplicativo disponível gratuitamente para download na Play Store e App Store. Os planos exibidos no site vão de USD 2,50 por mês até USD 5,00 por mês. Além das funções citadas nas soluções anteriores, esta oferece a opção de organizar as senhas em subpastas, e gerar senhas complexas automaticamente.
 
 Porém, um ponto em comum destes softwares é que todos transmitem suas senhas pela internet (mesmo que encripatadas). Um usuário malicioso pode obter acesso aos seus dados e tentar decifrá-los, conseguindo assim, acesso a todas as contas cujas senhas estivessem armazenadas no _App_.
 
@@ -39,19 +37,19 @@ Um comparativo das soluções existentes pode ser conferido na \autoref{tabela_a
 
 : Tabela comparativa dos aplicativos para armazenar senhas \label{tabela_apps}
 
-|Aplicativo|Completamente Gratuito|Versão Web |Armazenamento de Arquivos|
-|:--------:|:--------------------:|:---------:|:-----------------------:|
-|Dashlane  |                      |\textbullet|                         |
-|RoboForm  |\textbullet           |\textbullet|                         |
-|LastPass  |                      |\textbullet|\textbullet              |
-|1Password |                      |           |                         |
-|Keeper    |                      |           |\textbullet              |
+|Aplicativo|Preenchimento Automático|Login com Digital|Armazenamento de Arquivos|Gerador de Senhas|
+|:--------:|:----------------------:|:---------------:|:-----------------------:|:---------------:|
+|Dashlane  |\textbullet             |                 |                         |\textbullet
+|RoboForm  |\textbullet             |\textbullet      |                         |
+|LastPass  |\textbullet             |                 |\textbullet              |\textbullet
+|1Password |\textbullet             |                 |                         |\textbullet
+|Keeper    |\textbullet             |                 |\textbullet              |\textbullet
 
 ## Aplicativo _Esqueci a senha!_
 
-Com uma proposta diferente, foi desenvolvido o aplicativo _Esqueci a senha!_ \cite{esqueci_a_senha}, tendo algumas vantagens e desvantagens quando comparado às soluções supracitadas.
+Após realizar a pesquisa por soluções existentes, e com base em necessidades pessoais, foram definidos os requisitos para uma nova solução, chamada de _Esqueci a Senha!_ \cite{esqueci_a_senha}, tendo algumas vantagens e desvantagens quando comparado às soluções supracitadas.
 
-O principal diferencial é que _Esqueci a senha!_ armazena suas senhas somente em um banco de dados no próprio celular, não transmitindo nada pela internet. Com isso, você ganha em segurança, perdendo em praticidade. As senhas só existirão em um dispositivo, e serão perdidas em caso de troca de aparelho, por exemplo.
+Dentre os requisitos, o principal é que _Esqueci a senha!_ armazena suas senhas somente em um banco de dados no próprio celular, não transmitindo nada pela internet. Com isso, você ganha em segurança, perdendo em praticidade. As senhas só existirão em um dispositivo, e serão perdidas em caso de troca de aparelho, por exemplo.
 
 Para que a utilização seja simples e direta, o aplicativo armazena apenas 2 campos para cada senha:
 
@@ -65,6 +63,15 @@ Além disso, o aplicativo tem seu acesso protegido por uma "pergunta secreta" qu
 Um aplicativo que armazena senhas, deve ter algum tipo de proteção, para o caso do aparelho ir parar em mãos de terceiros.
 Além disso, um usuário que faz uso deste tipo de aplicativo tende a esquecer suas senhas, logo, não seria interessante para o mesmo que o programa fosse protegido com uma outra senha, já que seria comum o esquecimento desta também.
 Para isso, foi implementado o mecanismo em que o usuário no primeiro acesso à aplicação, define uma pergunta da qual apenas ele deveria saber a resposta, e a resposta desta. Assim, a cada acesso subsequente, a pergunta seria exibida, sendo necessário digitar a resposta.
+
+Com este resumo, podemos listar como os principais requisitos de forma simplificada:
+
+- R01: Não transmitir senhas pela internet (armazenando-as apenas localmente)
+- R02: Solicitar poucas informações do usuário
+- R03: Não utilizar senha para acessar o aplicativo
+- R04: Ser desenvolvido de forma que possa rodar em várias plataformas (iOS, Android e Web por meio de PWA)
+- R05: Ser de código aberto
+- R06: Utilizar tecnologias difundidas para ser de fácil manutenção
 
 # Escopo do projeto
 
@@ -183,11 +190,50 @@ As funções mais comuns do aplicativo são descritas no diagrama de casos de us
 
 Fonte: Autor.
 
-Os casos de uso referentes às senhas são autoexplicativos, sendo que o cadastro e edição de uma senha utilizam o mesmo formulário.
+A fim de não extender muito o texto, serão detalhados apenas os casos de uso mais pertinentes e relevantes da solução, visto que os demais são deveras simplórios, não se fazendo necessária uma descrição mais abrangente.
+
+Em seu primeiro acesso ao aplicativo, o usuário, após ver as telas de apresentação, deve cadastrar sua pergunta secreta, resposta e e-mail para recuperação da resposta, conforme a descrição seguinte:
+
+- **Caso de Uso**: Cadastrar pergunta secreta, resposta e e-mail de recuperação
+- Pós condições: Os dados de acesso (pergunta secreta, resposta e e-mail de recuperação) serão salvos na sessão
+- Cenário de sucesso:
+    1. O usuário digita sua pergunta secreta
+    2. O usuário digita a resposta para a pergunta
+    3. O usuário digita um e-mail de recuperação, para o caso de se esquecer da resposta
+    4. O usuário toca no botão "Salvar"
+    5. O usuário é redirecionado para a tela de Login
+- Fluxo alternativo:
+    5. No caso da validação do Acesso falhar, ou seja, um dos campos estar vazio, ou o campo de e-mail não estar no formato de e-mail correto, uma mensagem de erro será exibida
+
+Nos acessos subsequentes, após logado, o usuário pode alterar estes dados na aba de configurações, conforme a descrição seguinte:
+
+- **Caso de Uso**: Editar pergunta secreta, resposta e e-mail de recuperação
+- Pré condições: Ter os dados de acesso salvos na sessão
+- Pós condições: Os dados de acesso (pergunta secreta, resposta e e-mail de recuperação) serão atualizados e salvos na sessão
+- Cenário de sucesso:
+    1. O usuário acessa a tela de configurações
+    2. O usuário toca em "Alterar seus dados"
+    3. O usuário digita sua pergunta secreta
+    4. O usuário digita a resposta para a pergunta
+    5. O usuário digita um e-mail de recuperação, para o caso de se esquecer da resposta
+    6. O usuário toca no botão "Salvar"
+    7. Uma mensagem de sucesso ("Dados alterados com sucesso") é exibida
+    8. O usuário é redirecionado de volta à tela de configurações
+- Fluxo alternativo:
+    7. No caso da validação do Acesso falhar, ou seja, um dos campos estar vazio, ou o campo de e-mail não estar no formato de e-mail correto, uma mensagem de erro será exibida
 
 Para fazer login, o usuário precisa digitar a resposta para sua pergunta secreta que estará sendo exibida.
 
-Em seu primeiro acesso, o usuário deve cadastrar a pergunta secreta, resposta e e-mail para recuperação da resposta. Nos acessos subsequentes, após logado, o usuário pode alterar estes dados na aba de configurações.
+- **Caso de Uso**: Login
+- Pré condições: Ter os dados de acesso salvos na sessão
+- Pós condições: Ser redirecionado para a página de listagem de senhas
+- Cenário de sucesso:
+    1. Tela de login é exibida, mostrando a pergunta secreta
+    2. O usuário digita a resposta correta para a pergunta
+    3. O usuário é redirecionado para a página de listagem de senhas
+- Fluxo alternativo:
+    2. O usuário digita a resposta incorreta para a pergunta
+    3. Uma mensagem de erro ("Dados inválidos") é exibida na tela
 
 ## Exemplos de código
 
@@ -196,15 +242,7 @@ Em seu primeiro acesso, o usuário deve cadastrar a pergunta secreta, resposta e
 Para exemplificar como é o código de uma tela, pode ser conferido o exemplo do componente TS, ou seja, o _Controller_. Nele, temos alguns métodos do ciclo de vida do componente, como `ionViewWillEnter`, executado antes da tela ser carregada, e `ionViewDidEnter`, executado após entrar na tela. Nestes métodos podem ser executadas algumas ações, como buscar os dados a serem exibidos, realizar logs, enviar dados estatísticos, etc.
 
 ```
-import { Component } from '@angular/core';
-import { NavController, ActionSheetController, LoadingController } from 'ionic-angular';
-import { Senha } from './../../models/senha';
-import { SenhaDao } from './../../daos/senha.dao';
-import { ToastFactory } from './../../providers/toast-factory';
-import { AlertFactory } from './../../providers/alert-factory';
-import { FirebaseService } from './../../providers/firebase-service';
-import { EditarPage } from './../../pages/editar/editar';
-
+// ...
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -213,15 +251,7 @@ export class HomePage {
     public senhas: Senha[] = [];
     public inicializado: boolean = false;
 
-    constructor(
-        public navCtrl: NavController,
-        public senhaDao: SenhaDao,
-        private toast: ToastFactory,
-        private actionSheetCtrl: ActionSheetController,
-        private alertFactory: AlertFactory,
-        private loadingCtrl: LoadingController,
-        private firebase: FirebaseService
-    ) { }
+    // ...
 
     public ionViewWillEnter(): void {
         this.buscarSenhas();
@@ -283,7 +313,13 @@ export class HomePage {
 }
 ```
 
-Já para mostrar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos os métodos públicos do _Controller_, e assim, recuperar dados para exibí-los.
+A primeira linha exemplificada contém o que é chamado de _Decorator_ do TypeScript, que identifica que esta classe representa um componente do Angular. Neste _Decorator_, podemos passar informações como qual o seletor, ou seja, o nome da tag deste componente, e qual o caminho do seu template.
+
+No método `buscarSenhas()`, faz-se uso de um componente do Ionic chamado LoadingController \cite{loading_controller}, que exibe um ícone de "carregando". Após buscar as senhas no banco de dados, este ícone é escondido pelo código `loading.dismiss()`.
+
+Já no método `remover(senha: Senha)`, é utilizado o AlertController \cite{alert_controller} que exibe uma mensagem perguntando ao usuário se ele realmente deseja excluir a senha na qual ele clicou. Caso o usuário selecione a opção "Sim", a senha é removida do array que é exibido na tela, excluído do banco, e uma pequena mensagem de sucesso é exibida. Caso o usuário selecione a opção "Não", a pergunta é escondida, e nenhuma ação é realizada.
+
+Já para exemplificar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos as propriedades e métodos públicos do _Controller_, e assim, recuperar dados para exibí-los, e executar ações sobre eles.
 
 ```
 <ion-header>
@@ -314,14 +350,15 @@ Já para mostrar o template, ou seja, a _View_ de uma tela, podemos ver o códig
 </ion-content>
 ```
 
+Ao clicar em uma senha, o método `actionSheet` é chamado, utilizando o ActionSheetController \cite{action_sheet} que exibe as ações existentes, ou seja, editar e remover a senha.
+
 ### Criação do banco de dados
 
-A classe que gera a conexão com o banco de dados também verifica se a tabela já existe, criando-a caso contrário. Desta forma, na primeira conexão com o banco, a tabela será criada.
+A classe que gera a conexão com o banco de dados também realiza a criação do esquema no banco. Desta forma, na primeira conexão com o banco, a tabela será criada, conforme pode ser observado no construtor da classe `ConnectionFactory`, que executa o método `createSchema`, rodando o código SQL.
+
+No código SQL é utilizado o comando `CREATE TABLE IF NOT EXISTS`, que antes de criar a relação verifica se a mesma já existe. Logo, não haverá a possibilidade de acontecer um erro ao tentar criar uma tabela já existente.
 
 ```
-import { Injectable } from '@angular/core';
-
-@Injectable()
 export class ConnectionFactory {
 
     public getConnection() {
