@@ -386,6 +386,50 @@ export class ConnectionFactory {
 }
 ```
 
+# Resultaado obtido
+
+Com todo o estudo previamente citado, escopo e requisitos definidos e as escolhas de tecnologias, a implementação se deu de forma rápida e simples, gerando o aplicativo exibido nas telas a seguir.
+
+## Telas
+
+Ao abrir o aplicativo, o usuáraio se depara com uma _SplashScreen_ contendo a logo do aplicativo. A tela pode ser conferida na \autoref{tela-splash}.
+
+![Splash Screen](imagens/prints/01-splash.jpg){#tela-splash largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+Após ler os slides de apresentação exibidos na tela seguinte, o usuário encontra a tela para cadastrar sua pergunta secreta, resposta e e-mail de recuperação, conforme a \autoref{tela-pergunta}
+
+![Cadastro dos Dados de Acesso](imagens/prints/06-pergunta-secreta.jpg)(#tela-pergunta largura=100%)
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+Digitando os dados e clicando em "Salvar", o usuário é conduzido para a página de login. Ver \autoref(tela-login).
+
+![Login](imagens/prints/08-login.jpg){#tela-login largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+Após se logar, o usuário vê a tela de exibição de senhas, porém sem nenhuma cadastrada ainda, conforme \autoref{tela-sem-senhas). Então ele pode clicar na aba "Adicionar", e inserir os dados de uma nova senha na tela exemplificada na \autoref{tela-nova-senha}. Clicando em "Salvar", uma mensagem de sucesso é exibida. O usuáiro pode agora clicar em "Home", para visualizar a lista de senhas, que agora contém 1 cadastrada, conforme \autoref{tela-senhas}.
+
+![Home sem senhas](imagens/prints/09-home.jpg){#tela-sem-senhas largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+![Adicionar nova senha](imagens/prints/11-adicionar.jpg){#tela-nova-senha largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+![Home com uma senha](imagens/prints/13-home.jpg){#tela-senhas largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
+Para editar ou remover uma senha, basta que o usuário toque em uma das senhas, e as opções serão exibidas para ele, conforme \autoref{tela-action-sheet}
+
+![Ações com a senha](imagens/prints/14-action-sheet.jpg){#tela-action-sheet largura=100%}
+
+Fonte: Aplicativo _Esqueci a Senha!_.
+
 # Conclusão
 
 Analisando os resultados obtidos levando em consideração o nível de experiência existente antes do início do projeto, constata-se que mesmo com um escopo limitado e funções básicas, o aplicativo _Esqueci a Senha!_ se mostrou um ótimo exemplo de como a produtividade pode ser aumentada fazendo uso de tecnologias híbridas de desenvolvimento mobile, não tendo sido necessário nenhum conhecimento de arquitetura nativa de algum sistema operacional ou dispositivo.
