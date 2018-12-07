@@ -410,7 +410,7 @@ Digitando os dados e clicando em "Salvar", o usuário é conduzido para a págin
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
-Após se logar, o usuário vê a tela de exibição de senhas, porém sem nenhuma cadastrada ainda, conforme \autoref{tela-sem-senhas). Então ele pode clicar na aba "Adicionar", e inserir os dados de uma nova senha na tela exemplificada na \autoref{tela-nova-senha}. Clicando em "Salvar", uma mensagem de sucesso é exibida. O usuáiro pode agora clicar em "Home", para visualizar a lista de senhas, que agora contém 1 cadastrada, conforme \autoref{tela-senhas}.
+Após se logar, o usuário vê a tela de exibição de senhas, porém sem nenhuma cadastrada ainda, conforme \autoref{tela-sem-senhas}. Então ele pode clicar na aba "Adicionar", e inserir os dados de uma nova senha na tela exemplificada na \autoref{tela-nova-senha}. Clicando em "Salvar", uma mensagem de sucesso é exibida. O usuáiro pode agora clicar em "Home", para visualizar a lista de senhas, que agora contém 1 cadastrada, conforme \autoref{tela-senhas}.
 
 ![Home sem senhas](imagens/prints/09-home.png){#tela-sem-senhas largura=70%}
 
@@ -437,3 +437,12 @@ Analisando os resultados obtidos levando em consideração o nível de experiên
 A plataforma de acesso ao dispositivo fonecido pelo Apache Cordova e os componentes visuais e estruturais oferecidos do Ionic Framework foram mais do que suficientes para o desenvolvimento do projeto em questão, sendo possível extender o programa com novas funcionalidades sem maiores dificuldades, caso seja necessário.
 
 Os estudos feitos ao longo do desenvolvimento deste trabalho também mostraram que a possibilidade de desenvolver um aplicativo utilizando apenas tecnologias Web, ou seja, PWAs é enorme, e que é esperado que mais soluções e técnicas para este tipo de implementação apareçam com o passar do tempo, evoluindo cada vez mais.
+
+# Trabalhos futuros
+
+Ficou claro que a aplicação resultante deste trabalho cumpre seu propósito, armazenando as senhas do usuário de forma bem simples e objetiva, não as transmitindo pela internet, gerando uma segurança maior. Porém sempre há espaço para melhorias, e aqui ficam algumas que podem ser implementadas no futuro:
+
+- Implementar um gerador de senhas fortes
+- Exportar senhas para que o usuário possa realizar backup
+- Criptografar as senhas, mesmo que elas não sejam transmitidas
+- Múltiplos usuários por dispositivo
