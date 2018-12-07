@@ -386,7 +386,7 @@ export class ConnectionFactory {
 }
 ```
 
-# Resultaado obtido
+# Resultado obtido
 
 Com todo o estudo previamente citado, escopo e requisitos definidos e as escolhas de tecnologias, a implementação se deu de forma rápida e simples, gerando o aplicativo exibido nas telas a seguir.
 
@@ -394,39 +394,39 @@ Com todo o estudo previamente citado, escopo e requisitos definidos e as escolha
 
 Ao abrir o aplicativo, o usuáraio se depara com uma _SplashScreen_ contendo a logo do aplicativo. A tela pode ser conferida na \autoref{tela-splash}.
 
-![Splash Screen](imagens/prints/01-splash.jpg){#tela-splash largura=100%}
+![Splash Screen](imagens/prints/01-splash.png){#tela-splash largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
 Após ler os slides de apresentação exibidos na tela seguinte, o usuário encontra a tela para cadastrar sua pergunta secreta, resposta e e-mail de recuperação, conforme a \autoref{tela-pergunta}
 
-![Cadastro dos Dados de Acesso](imagens/prints/06-pergunta-secreta.jpg)(#tela-pergunta largura=100%)
+![Dados de Acesso](imagens/prints/06-pergunta-secreta.png){#tela-pergunta largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
-Digitando os dados e clicando em "Salvar", o usuário é conduzido para a página de login. Ver \autoref(tela-login).
+Digitando os dados e clicando em "Salvar", o usuário é conduzido para a página de login. Ver \autoref{tela-login}.
 
-![Login](imagens/prints/08-login.jpg){#tela-login largura=100%}
+![Login](imagens/prints/08-login.png){#tela-login largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
 Após se logar, o usuário vê a tela de exibição de senhas, porém sem nenhuma cadastrada ainda, conforme \autoref{tela-sem-senhas). Então ele pode clicar na aba "Adicionar", e inserir os dados de uma nova senha na tela exemplificada na \autoref{tela-nova-senha}. Clicando em "Salvar", uma mensagem de sucesso é exibida. O usuáiro pode agora clicar em "Home", para visualizar a lista de senhas, que agora contém 1 cadastrada, conforme \autoref{tela-senhas}.
 
-![Home sem senhas](imagens/prints/09-home.jpg){#tela-sem-senhas largura=100%}
+![Home sem senhas](imagens/prints/09-home.png){#tela-sem-senhas largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
-![Adicionar nova senha](imagens/prints/11-adicionar.jpg){#tela-nova-senha largura=100%}
+![Adicionar nova senha](imagens/prints/11-adicionar.png){#tela-nova-senha largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
-![Home com uma senha](imagens/prints/13-home.jpg){#tela-senhas largura=100%}
+![Home com uma senha](imagens/prints/13-home.png){#tela-senhas largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
 Para editar ou remover uma senha, basta que o usuário toque em uma das senhas, e as opções serão exibidas para ele, conforme \autoref{tela-action-sheet}
 
-![Ações com a senha](imagens/prints/14-action-sheet.jpg){#tela-action-sheet largura=100%}
+![Ações com a senha](imagens/prints/14-action-sheet.png){#tela-action-sheet largura=70%}
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
