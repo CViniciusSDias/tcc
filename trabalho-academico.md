@@ -75,7 +75,7 @@ Desta forma, não há necessidade de exibir vários campos que muitas vezes não
 
 Com isto, o banco de dados do projeto contém apenas 1 tabela com os campos id, onde_usar e senha. Não se faz necessária nenhuma outra tabela, pois o aplicativo (por hora) permite apenas 1 usuário por dispositivo.
 
-Com isso, o aplicativo tem seu acesso protegido por uma "pergunta secreta" que o usuário deve definir em seu primeiro acesso ao mesmo. Desta forma, caso alguém ache o celular, não conseguirá acessar suas senhas, mas não será necessária **mais uma senha** para acessar o aplicativo. Seu funcionamento se dá da seguinte forma:
+O aplicativo tem seu acesso protegido por uma "pergunta secreta" que o usuário deve definir em seu primeiro acesso ao mesmo. Desta forma, caso alguém ache o celular, não conseguirá acessar suas senhas, mas não será necessária **mais uma senha** para acessar o aplicativo. Seu funcionamento se dá da seguinte forma:
 
 Um aplicativo que armazena senhas, deve ter algum tipo de proteção, para o caso do aparelho ir parar em mãos de terceiros.
 Além disso, um usuário que faz uso deste tipo de aplicativo tende a esquecer suas senhas, logo, não seria interessante para o mesmo que o programa fosse protegido com uma outra senha, já que seria comum o esquecimento desta também.
@@ -172,7 +172,7 @@ Este projeto faz uso de um framework JavaScript chamado _Angular_.
 
 O framework Angular \cite{livro_angular} foi criado pela Google, e tem como principal característica a possibilidade de criação de componentes, que podem ser estilizados de forma independente, e utilizados dentro de outros componentes.
 
-Utilizando Angular, o Ionic consegue criar componentes estilizados, e fazendo uso do plugin `cordova-plugin-device`, consegue formatar os mesmos de acordo com a plataforma utilizada, ou seja, oferecer aparências diferentes para Android e iOS, por exemplo.
+Fazendo uso do Angular, o Ionic consegue criar componentes estilizados, e fazendo uso do plugin `cordova-plugin-device`, consegue formatar os mesmos de acordo com a plataforma utilizada, ou seja, oferecer aparências diferentes para Android e iOS, por exemplo.
 
 ## Web SQL Database
 
@@ -190,7 +190,7 @@ O projeto foi organizado estruturalmente, de forma com que uma classe é respons
 
 Este padrão, da forma como é utilizado hoje, consisiste em dividir o sistema em 3 camadas. Uma camada representa o dado a ser exibido e/ou manipulado, que é chamada de _Model_. Uma outra camada cuida da visualização deste dado, chamada de _View_. A terceira camada, chamada de _Controller_ faz a interação entre as duas anteriores.
 
-No caso do aplicativo, o componente que monta a tela, é o Controller. O arquivo de template, em html, é a View, e a classe que representa o dado, como a senha, por exemplo, é nosso Model.
+No caso do aplicativo, o componente que monta a tela, é o Controller. O arquivo de template, em HTML, é a View, e a classe que representa o dado, como a senha, por exemplo, é nosso Model.
 
 Diversos frameworks e ferramentas Web adotam este padrão, o que faz com que ele seja amplamente conhecido, fazendo com que uma eventual manutenção de outro programador familiarizado com o ambiente Web seja facilitada.
 
@@ -219,7 +219,7 @@ Diversos frameworks e ferramentas Web adotam este padrão, o que faz com que ele
 - manifest.json
     - Arquivo contendo dados da aplicação para que possa ser utilizado como PWA
 - service-worker.js
-    - Arquivo que realiaria tarefas em segundo plano, caso necessário
+    - Arquivo que realizaria tarefas em segundo plano, caso necessário
 
 ## Diagrama de classes
 
@@ -229,9 +229,9 @@ As principais classes de negócio, e classes fornecedoras de serviços que usam,
 
 Fonte: Autor.
 
-A classe _Senha_ representa uma senha armazenada pelo usário, e na tela inicial, é exibido uma lista de objetos deste tipo. Já a classe _Acesso_ representa os dados necessários para acessar o aplicativo, que são a pergunta secreta e sua resposta. No objeto desta classe é armazenado também o e-mail do usuário, para o caso dele esquecer a resposta, e precisar recuperá-la.
+A classe _Senha_ representa uma senha armazenada pelo usário, e na tela inicial, é exibido uma lista de objetos deste tipo. Já a classe _Acesso_ representa os dados necessários para acessar o aplicativo, que são a pergunta secreta e sua resposta. No objeto desta classe é armazenado também o e-mail do usuário, para o caso dele esquecer a resposta e precisar recuperá-la.
 
-Estas classes têm métodos para validar seus dados, e nestes métodos a classe _StringHelper_ é utilizada, podendo verificar se uma string está vazia, ou está no formato de e-mail.
+Estas classes têm métodos para validar seus dados, e nestes métodos a classe _StringHelper_ é utilizada, podendo verificar se uma string está vazia ou está no formato de e-mail.
 
 Para buscar os dados de acesso (pergunta secreta e sua resposta), o serviço _AcessoService_ é utilizado, buscando as informações da sessão. Este serviço também informa se é ou não o primeiro acesso do usuário ao aplicativo.
 
@@ -317,13 +317,13 @@ export class HomePage {
 }
 ```
 
-A primeira linha exemplificada contém o que é chamado de _Decorator_ do TypeScript, que identifica que esta classe representa um componente do Angular. Neste _Decorator_, podemos passar informações como qual o seletor, ou seja, o nome da tag deste componente, e qual o caminho do seu template.
+A primeira linha exemplificada contém o que é chamado de _Decorator_ do TypeScript, que identifica que esta classe representa um componente do Angular. Neste _Decorator_, podemos passar informações como qual o seletor, ou seja, o nome da tag deste componente e qual o caminho do seu template.
 
 No método `buscarSenhas()`, faz-se uso de um componente do Ionic chamado LoadingController \cite{loading_controller}, que exibe um ícone de "carregando". Após buscar as senhas no banco de dados, este ícone é escondido pelo código `loading.dismiss()`.
 
-Já no método `remover(senha: Senha)`, é utilizado o AlertController \cite{alert_controller} que exibe uma mensagem perguntando ao usuário se ele realmente deseja excluir a senha na qual ele clicou. Caso o usuário selecione a opção "Sim", a senha é removida do array que é exibido na tela, excluído do banco, e uma pequena mensagem de sucesso é exibida. Caso o usuário selecione a opção "Não", a pergunta é escondida, e nenhuma ação é realizada.
+Já no método `remover(senha: Senha)`, é utilizado o AlertController \cite{alert_controller} que exibe uma mensagem perguntando ao usuário se ele realmente deseja excluir a senha na qual ele clicou. Caso o usuário selecione a opção "Sim", a senha é removida do array que é exibido na tela, excluído do banco e uma pequena mensagem de sucesso é exibida. Caso o usuário selecione a opção "Não", a pergunta é escondida e nenhuma ação é realizada.
 
-Já para exemplificar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos as propriedades e métodos públicos do _Controller_, e assim, recuperar dados para exibí-los, e executar ações sobre eles. Desta forma que a classe _Controller_ `HomePage` faz a ligação entre a camada de _View_ (template) e a camada _Model_ (senhas).
+Já para exemplificar o template, ou seja, a _View_ de uma tela, podemos ver o código em HTML. Nele, podemos acessar todos as propriedades e métodos públicos do _Controller_, e assim, recuperar dados para exibí-los e executar ações sobre eles. Desta forma que a classe _Controller_ `HomePage` faz a ligação entre a camada de _View_ (template) e a camada _Model_ (senhas).
 
 ```
 <ion-header>
@@ -354,7 +354,7 @@ Já para exemplificar o template, ou seja, a _View_ de uma tela, podemos ver o c
 </ion-content>
 ```
 
-Ao clicar em uma senha, o método `actionSheet` é chamado, utilizando o ActionSheetController \cite{action_sheet} que exibe as ações existentes, ou seja, editar e remover a senha.
+Ao clicar em uma senha, o método `actionSheet` é chamado utilizando o ActionSheetController \cite{action_sheet} que exibe as ações existentes, ou seja, editar e remover a senha.
 
 ### Criação do banco de dados
 
@@ -424,7 +424,7 @@ Fonte: Aplicativo _Esqueci a Senha!_.
 
 Fonte: Aplicativo _Esqueci a Senha!_.
 
-Para editar ou remover uma senha, basta que o usuário toque em uma das senhas, e as opções serão exibidas para ele, conforme \autoref{tela-action-sheet}
+Para editar ou remover uma senha, basta que o usuário toque em uma das senhas e as opções serão exibidas para ele, conforme \autoref{tela-action-sheet}
 
 ![Ações com a senha](imagens/prints/14-action-sheet.png){#tela-action-sheet largura=70%}
 
@@ -436,11 +436,11 @@ Analisando os resultados obtidos levando em consideração o nível de experiên
 
 A plataforma de acesso ao dispositivo fonecido pelo Apache Cordova e os componentes visuais e estruturais oferecidos do Ionic Framework foram mais do que suficientes para o desenvolvimento do projeto em questão, sendo possível extender o programa com novas funcionalidades sem maiores dificuldades, caso seja necessário.
 
-Os estudos feitos ao longo do desenvolvimento deste trabalho também mostraram que a possibilidade de desenvolver um aplicativo utilizando apenas tecnologias Web, ou seja, PWAs é enorme, e que é esperado que mais soluções e técnicas para este tipo de implementação apareçam com o passar do tempo, evoluindo cada vez mais.
+Os estudos feitos ao longo do desenvolvimento deste trabalho também mostraram que a possibilidade de desenvolver um aplicativo utilizando apenas tecnologias Web, ou seja, PWAs, é enorme e que é esperado que mais soluções e técnicas para este tipo de implementação apareçam com o passar do tempo, evoluindo cada vez mais.
 
 # Trabalhos futuros
 
-Ficou claro que a aplicação resultante deste trabalho cumpre seu propósito, armazenando as senhas do usuário de forma bem simples e objetiva, não as transmitindo pela internet, gerando uma segurança maior. Porém sempre há espaço para melhorias, e aqui ficam algumas que podem ser implementadas no futuro:
+Ficou claro que a aplicação resultante deste trabalho cumpre seu propósito, armazenando as senhas do usuário de forma bem simples e objetiva, não as transmitindo pela internet, gerando uma segurança maior. Porém sempre há espaço para melhorias e aqui ficam algumas que podem ser implementadas no futuro:
 
 - Implementar um gerador de senhas fortes
 - Exportar senhas para que o usuário possa realizar backup
