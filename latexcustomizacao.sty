@@ -3,7 +3,37 @@
 % ---
 
 \ProvidesPackage{latexcustomizacao}[2017 Criacao desta customizacao do abnTeX2]
+\usepackage{graphicx}
 
 % Adicione seus códigos abaixo:
 
 
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center
+	\includegraphics[width=2cm]{imagens/brasao.png}
+	
+    {\ABNTEXchapterfont\textsc{Governo do Estado do Rio De Janeiro\\
+	Secretaria de Estado de Ciência e Tecnologia\\
+	Fundação de Apoio à Escola Técnica\\
+	Centro de Educação Profissional em Tecnologia da Informação\\
+	Faculdade de Educação Tecnológica do Estado do Rio de Janeiro\\
+	Faeterj/Petrópolis}}
+	
+    \vspace*{3cm}
+    \begin{center}
+    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+    \end{center}
+    \vfill
+	
+    {\ABNTEXchapterfont\bfseries\large\imprimirautor}
+	
+    \vspace*{1cm}
+
+    \large\imprimirlocal
+
+    \large\imprimirdata
+
+    \vspace*{1cm}
+  \end{capa}
+}
